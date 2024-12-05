@@ -6,7 +6,10 @@
         <title>Login Page</title>
         <!--Importação da fonte Roboto-->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+        <!--Importação do ícone do envelope-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+        </svg>
     </head>
 <!-- body{background-color: #1C1C1C;} significa modificar a cor de fundo do corpo do site
  Para acessar os códigos hexadecimais das cores:
@@ -19,19 +22,46 @@ position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);-->
         #Contact{color:#f38bf3; text-align:center; font-family:'Roboto', sans-serif;}
         #FormLogin{background-color: #363636; max-width: 500px; width:70%; padding: 20px;
                     position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); border-radius: 10px;}
-        #Email{width:100%; height:45px; border:1px solid #DDA0DD; border-radius: 20px; padding-left:10px; margin: 10 px 0;}            
-        #Password{width:100%; height:45px; border:1px solid #DDA0DD; border-radius: 20px; padding-left:10px; margin: 10 px 0;}
-        #Submit{width:100%; height:30px; cursor: pointer; background: #FF69B4;  border:0; border-radius: 20px;
-                padding-left:10px; margin: 10 px 0;}
+        #Email,#Password{width:100%; height:45px; border:1px solid #DDA0DD; border-radius: 20px; padding-left:10px; margin: 10px 0;}            
+        #Submit{width:100%; height:40px; cursor: pointer; background: #FF69B4;  border:0; border-radius: 20px; margin: 10px 0;
+                transition: 1s;}
+        #Submit:hover{background-color: #d45795;}
+        form input[type=text]:focus{outline:0;}
+        form input[type=password]:focus{outline:0;}
     </style>
+    <!--Para mudanças de cor e transições em um objeto, deve-se definir o transition:x s; 
+    depois objeto.hover{background-color: "outra cor, geralmente mais escura";}-->
     <body>
         <form id="FormLogin">
         <h3 id="Contact">Contact Us</h3>
-        <input id="Email" type="text" name="email" placeholder="Your Email"/>
+        <div style="position: relative;">
+            <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-.5a.5.5 0 0 0-.5.5v.217l6 3.6 6-3.6V4a.5.5 0 0 0-.5-.5H2zm13 .843-5.803 3.482L15 11.401V4.343zM1 4.343v7.058l5.803-3.576L1 4.343zM15 12V4.432l-6 3.708-6-3.708V12a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5z"/>
+            </svg>
+            <input id="Email" type="text" name="email" placeholder="Your Email" style="padding-left: 40px;"/>
+        </div>
         <!--input type="password" permite esconder a senha com as "bolinhas"-->
-        <input id="Password" type="password" name="password" placeholder="Your Password"/> 
+        <div style="position: relative;">
+            <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+              </svg>
+            <input id="Password" type="password" name="password" placeholder="Your Password" style="padding-left: 40px;"/> 
+        </div>
         <!--input type="submit" é do tipo botão-->
-        <input id="Submit" type="submit" name="login" value="Login"/>
+        <input id="Submit" type="submit" name="login" value="Login"/> 
         </form>
+        
+        <script>
+            //var x = document.getElementById('cccc') - serve para gerar uma variavel e colocar um dos elementos do HTML nela
+            var email = document.getElementById('Email');
+            var password = document.getElementById('Password');
+            //x.addEventListener('focus',()=>{x.style.borderColor = "#4A5F6A"}); -'focus' serve para dar foco mudando para
+            //uma cor selecionada a uma variavel ao clicar; o 'blur' serve para desfocar ao sair do clique
+            email.addEventListener('focus',()=>{email.style.borderColor = "#d45795"});
+            email.addEventListener('blur',()=>{email.style.borderColor = "#ccc"});
+
+            password.addEventListener('focus',()=>{email.style.borderColor = "#d45795"});
+            password.addEventListener('blur',()=>{password.style.borderColor = "#ccc"});
+        </script>
     </body>
 </html>
