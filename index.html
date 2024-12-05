@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-</head>
-<style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-</style>
-<body>
-    <h3>Contact Us</h3>
-    <input type="text" name="email" placeholder="Your Email"/>
-    <input type="password" name="password" placeholder="Your Password"/>
-    <input type="text" name="email" placeholder="Your Email"/>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+    </head>
+<!-- body{background-color: #1C1C1C;} significa modificar a cor de fundo do corpo do site
+ Para acessar os códigos hexadecimais das cores:
+ https://celke.com.br/artigo/tabela-de-cores-html-nome-hexadecimal-rgb -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background-color: #1C1C1C;}
+        #Contact{color:#DDA0DD;}
+        #FormLogin{background-color: #363636; max-width: 500px; width:70%; padding: 20px;}
+    </style>
+    <body>
+        <form id="FormLogin">
+        <h3 id="Contact">Contact Us</h3>
+        <input type="text" name="email" placeholder="Your Email"/>
+        <!--input type="password" permite esconder a senha com as "bolinhas"-->
+        <input type="password" name="password" placeholder="Your Password"/> 
+        <input type="text" name="email" placeholder="Your Email"/>
+        </form>
+    </body>
 </html>
