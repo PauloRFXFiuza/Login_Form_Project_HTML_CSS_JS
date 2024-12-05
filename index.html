@@ -8,11 +8,14 @@
 <!-- body{background-color: #1C1C1C;} significa modificar a cor de fundo do corpo do site
  Para acessar os códigos hexadecimais das cores:
  https://celke.com.br/artigo/tabela-de-cores-html-nome-hexadecimal-rgb -->
+<!--Para centralizar um objeto, deixando adaptável a qualquer tela, deve-se seguir os comandos:
+position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);-->
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         body{background-color: #1C1C1C;}
         #Contact{color:#DDA0DD;}
-        #FormLogin{background-color: #363636; max-width: 500px; width:70%; padding: 20px;}
+        #FormLogin{background-color: #363636; max-width: 500px; width:70%; padding: 20px;
+                    position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);}
     </style>
     <body>
         <form id="FormLogin">
