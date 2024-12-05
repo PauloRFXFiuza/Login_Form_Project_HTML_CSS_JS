@@ -16,18 +16,21 @@ position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);-->
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         body{background-color: #1C1C1C;}
-        #Contact{color:#DDA0DD; text-align:center; font-family:'Roboto', sans-serif;}
+        #Contact{color:#f38bf3; text-align:center; font-family:'Roboto', sans-serif;}
         #FormLogin{background-color: #363636; max-width: 500px; width:70%; padding: 20px;
                     position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);}
+        #Email{width:100%; height:45px; border:1px solid #DDA0DD; padding-left:10px; margin: 10 px 0;}            
+        #Password{width:100%; height:45px; border:1px solid #DDA0DD; padding-left:10px; margin: 10 px 0;}
+        #Submit{width:100%; height:30px; cursor: pointer; background: #FF69B4;  border:0; padding-left:10px; margin: 10 px 0;}
     </style>
     <body>
         <form id="FormLogin">
         <h3 id="Contact">Contact Us</h3>
-        <input type="text" name="email" placeholder="Your Email"/>
+        <input id="Email" type="text" name="email" placeholder="Your Email"/>
         <!--input type="password" permite esconder a senha com as "bolinhas"-->
-        <input type="password" name="password" placeholder="Your Password"/> 
+        <input id="Password" type="password" name="password" placeholder="Your Password"/> 
         <!--input type="submit" é do tipo botão-->
-        <input type="submit" name="login" value="Login"/>
+        <input id="Submit" type="submit" name="login" value="Login"/>
         </form>
     </body>
 </html>
